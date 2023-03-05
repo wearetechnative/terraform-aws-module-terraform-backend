@@ -8,7 +8,7 @@ This module mostly enforces safe and known best practices:
 
 In case multiple Terraform projects are used on the same account they should be differentiated by `var.name`. Creating seperate modules increases seperation without increasing cost because all resources are either pay per use by default (S3) or configured to do so (DynamoDB).
 
-The KMS key should be provided externally as these incur a monthly 1 dollar cost.
+The KMS key should be provided externally as these incur a monthly 1 dollar cost. See `var.kms_key_arn` for this.
 
 [![](we-are-technative.png)](https://www.technative.nl)
 
