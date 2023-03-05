@@ -55,7 +55,7 @@ terraform {
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_backend_s3"></a> [backend\_s3](#module\_backend\_s3) | git@github.com:TechNative-B-V/terraform-aws-module-s3.git/ | 3b39341b8f0ca25423f97ed3107411d6a4c6493f |
+| <a name="module_backend"></a> [backend](#module\_backend) | git@github.com:TechNative-B-V/terraform-aws-module-s3.git/ | 3b39341b8f0ca25423f97ed3107411d6a4c6493f |
 
 ## Resources
 
