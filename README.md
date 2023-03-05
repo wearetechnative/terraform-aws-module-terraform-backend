@@ -2,6 +2,12 @@
 
 An S3 bucket with DynamoDB compatible for use as a Terraform Backend.
 
+This module mostly enforces safe and known best practices:
+- Use our S3 module with locked down permissions.
+- Setup DynamoDB compatible for use in backend and using PAY PER REQUEST to minize cost.
+
+In case multiple Terraform projects are used on the same account they should be differentiated by `var.name`. Creating seperate modules increases seperation without increasing cost because all resources are either pay per use by default (S3) or configured to do so (DynamoDB).
+
 [![](we-are-technative.png)](https://www.technative.nl)
 
 ## How does it work
@@ -20,7 +26,7 @@ The role is used for any cross-account setups but should also be used for any in
 
 To use this module:
 1. The S3 bucket name is provided by the output `terraform_backend_s3_id`.
-2. The DynamoDB name is `terraform-state-lock` or `tfstate-lock-<stack_name>` .
+2. The DynamoDB name is provided by the output `terraform_backend_dynamodb_name`.
 
 Example backend.tf file:
 
@@ -55,7 +61,6 @@ terraform {
 | Name | Type |
 |------|------|
 | [aws_dynamodb_table.terraformstatelock](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dynamodb_table) | resource |
-| [aws_kms_grant.backend](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_grant) | resource |
 | [aws_arn.backend_s3](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/arn) | data source |
 | [aws_iam_policy_document.terraformdynamodb](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 | [aws_iam_policy_document.terraforms3](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
@@ -67,13 +72,11 @@ terraform {
 |------|-------------|------|---------|:--------:|
 | <a name="input_kms_key_arn"></a> [kms\_key\_arn](#input\_kms\_key\_arn) | KMS key to use for encrypting EBS volumes. | `string` | `null` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name to allow this module to be deployed multiple times in the same account. | `string` | `""` | no |
-| <a name="input_useraccount_account_id"></a> [useraccount\_account\_id](#input\_useraccount\_account\_id) | Useraccount account ID so we can setup trust for the TerraformBackendRole. Use null to not create this role. | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
 | <a name="output_terraform_backend_dynamodb_name"></a> [terraform\_backend\_dynamodb\_name](#output\_terraform\_backend\_dynamodb\_name) | n/a |
-| <a name="output_terraform_backend_role_arn"></a> [terraform\_backend\_role\_arn](#output\_terraform\_backend\_role\_arn) | n/a |
 | <a name="output_terraform_backend_s3_id"></a> [terraform\_backend\_s3\_id](#output\_terraform\_backend\_s3\_id) | n/a |
 <!-- END_TF_DOCS -->
