@@ -54,14 +54,14 @@ terraform {
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >=4.3.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.57.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_backend"></a> [backend](#module\_backend) | git@github.com:TechNative-B-V/terraform-aws-module-s3.git/ | 3b39341b8f0ca25423f97ed3107411d6a4c6493f |
-| <a name="module_state_lock"></a> [state\_lock](#module\_state\_lock) | git@github.com:TechNative-B-V/terraform-aws-module-dynamodb.git/ | 2016bbf331807b9832e3e9bc01ecd292bfefe5d3 |
+| <a name="module_state_lock"></a> [state\_lock](#module\_state\_lock) | git@github.com:TechNative-B-V/terraform-aws-module-dynamodb.git/ | 5fb90ad50328a36290b6572d5b56e9ff691e4385 |
 
 ## Resources
 
