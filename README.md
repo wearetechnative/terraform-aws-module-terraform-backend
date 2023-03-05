@@ -55,17 +55,13 @@ terraform {
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_backend_s3"></a> [backend\_s3](#module\_backend\_s3) | ./../s3 | n/a |
-| <a name="module_iam_role"></a> [iam\_role](#module\_iam\_role) | ./../identity_and_access_management/iam_role/ | n/a |
+| <a name="module_backend_s3"></a> [backend\_s3](#module\_backend\_s3) | git@github.com:TechNative-B-V/terraform-aws-module-s3.git/ | 3b39341b8f0ca25423f97ed3107411d6a4c6493f |
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [aws_dynamodb_table.terraformstatelock](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dynamodb_table) | resource |
-| [aws_arn.backend_s3](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/arn) | data source |
-| [aws_iam_policy_document.terraformdynamodb](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
-| [aws_iam_policy_document.terraforms3](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
+| [aws_dynamodb_table.state_lock](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dynamodb_table) | resource |
 | [aws_partition.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/partition) | data source |
 
 ## Inputs
