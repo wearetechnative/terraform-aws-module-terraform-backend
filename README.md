@@ -56,12 +56,12 @@ terraform {
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_backend"></a> [backend](#module\_backend) | git@github.com:TechNative-B-V/terraform-aws-module-s3.git/ | 3b39341b8f0ca25423f97ed3107411d6a4c6493f |
+| <a name="module_state_lock"></a> [state\_lock](#module\_state\_lock) | git@github.com:TechNative-B-V/terraform-aws-module-dynamodb.git/ | 2016bbf331807b9832e3e9bc01ecd292bfefe5d3 |
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [aws_dynamodb_table.state_lock](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dynamodb_table) | resource |
 | [aws_partition.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/partition) | data source |
 
 ## Inputs
