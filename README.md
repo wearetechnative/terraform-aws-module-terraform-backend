@@ -32,9 +32,14 @@ To use this module:
 
 Example backend.tf file:
 
-```json
+Replace `bucket` and `dynamodb_table` accordingly. Set `role_arn` to same role as your account provider.
+
+```ruby
 terraform {
   backend "s3" {
+    role_arn     = "arn:aws:iam::<account_id>:role/OrganizationAccountAccessRole"
+    session_name = "TerraformStateUpdate"
+
     bucket = "See step 1)"
     key    = "terraform.tf"
     region = "eu-central-1"
