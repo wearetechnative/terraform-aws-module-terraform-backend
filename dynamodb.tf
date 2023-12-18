@@ -5,4 +5,7 @@ module "state_lock" {
   kms_key_arn = var.kms_key_arn
   partition_key = "LockID"
   partition_key_type = "S"
+  tags = {
+    enable_backup = true
+  }
 }
