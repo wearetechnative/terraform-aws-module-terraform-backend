@@ -4,6 +4,12 @@ variable "name" {
   default     = ""
 }
 
+variable "add_name_prefix_to_dynamodb" {
+  description = "To prefix the name to the Dynamodb table name."
+  type        = bool
+  default     = false
+}
+
 variable "kms_key_arn" {
   description = "KMS key to use for encrypting EBS volumes."
   type        = string

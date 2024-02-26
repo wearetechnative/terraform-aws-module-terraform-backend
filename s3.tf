@@ -1,6 +1,7 @@
 module "backend" {
-  source   = "git@github.com:TechNative-B-V/terraform-aws-module-s3.git/?ref=3b39341b8f0ca25423f97ed3107411d6a4c6493f"
+  source   = "git@github.com:wearetechnative/terraform-aws-s3.git/?ref=41f66d2b2357c9cb0c64488eb92812c10d224823"
 
-  name        = "terraform-state${local.name}"
+  name        = lower("terraform-state${local.name}")
+  use_fixed_name = true
   kms_key_arn = var.kms_key_arn
 }
