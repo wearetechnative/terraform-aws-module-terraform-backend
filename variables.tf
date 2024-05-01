@@ -15,3 +15,10 @@ variable "kms_key_arn" {
   type        = string
   default     = null
 }
+
+variable "use_fixed_name" {
+  description = "Trigger to use fixed name instead of adding a random prefix."
+  type        = string
+  default     = false
+}
+
