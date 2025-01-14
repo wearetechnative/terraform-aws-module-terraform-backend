@@ -1,5 +1,5 @@
 module "backend" {
-  source = "git@github.com:wearetechnative/terraform-aws-s3.git/?ref=2df300694acecd8ca62330a039b4a25eae20b07d"
+  source = "github.com/wearetechnative/terraform-aws-s3.git/?ref=945d79d5d12cbc2e281afae53c74367a3c6bfd6e"
 
   name           = lower("terraform-state${local.name}")
   use_fixed_name = var.use_fixed_name

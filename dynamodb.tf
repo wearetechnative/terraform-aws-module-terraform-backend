@@ -1,5 +1,5 @@
 module "state_lock" {
-  source = "git@github.com:wearetechnative/terraform-aws-module-dynamodb.git/?ref=5fb90ad50328a36290b6572d5b56e9ff691e4385"
+  source = "github.com/wearetechnative/terraform-aws-module-dynamodb.git/?ref=391776786f83458afa156503fe7e70ab1019f514"
 
   name               = var.add_name_prefix_to_dynamodb == true ? "terraform-state-lock${local.name}" : "terraform-state-lock"
   kms_key_arn        = var.kms_key_arn
