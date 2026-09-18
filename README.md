@@ -1,4 +1,4 @@
-# Terraform AWS [Terraform Backend]
+# Terraform AWS [Terraform Backend] ![](https://img.shields.io/github/actions/workflow/status/wearetechnative/terraform-aws-module-terraform-backend/lint.yaml?branch=main&style=plastic&label=lint) ![](https://img.shields.io/github/actions/workflow/status/wearetechnative/terraform-aws-module-terraform-backend/security-scan.yaml?branch=main&style=plastic&label=security)
 
 An S3 bucket with DynamoDB compatible for use as a Terraform Backend.
 
